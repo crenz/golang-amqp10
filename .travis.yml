@@ -1,0 +1,18 @@
+language: go
+
+sudo: required
+
+services:
+  - docker
+
+go:
+  - 1.7
+
+install:
+  - docker build --no-cache -t crenz/golang-amqp10 docker/default;
+
+script:
+
+after_success:
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker push crenz/mqttrules
