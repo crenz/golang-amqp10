@@ -5,7 +5,7 @@ MAINTAINER Christian Renz <crenz@web42.com>
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		cmake \
         libssl-dev \
-        libsasl2-2 libsasl2-dev \
+        libsasl2-2 libsasl2-dev libsasl2-modules-db \
 	&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR /temp
